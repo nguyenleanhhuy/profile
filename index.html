@@ -13,12 +13,16 @@
     <link rel="stylesheet" href="./assets/font/icon/themify-icons-font/themify-icons/themify-icons.css">
     
 </head>
-<body>
-   
+<body >
+    <div class="modal" id="modal" onclick="playit()">
+
+    </div>
+    <audio autoplay loop id="bg-music">
+    <source src="./assets/audio/nhucoBacHo.mp3" type="audio/mpeg">
+    </audio>
+    
     <div id="wrapper">
-        <audio autoplay loop id="bg-music" controls style="height:100px;">
-            <source src="./assets/audio/nhucoBacHo.mp3" type="audio/mpeg">
-        </audio>
+        
         <div id="header">
             <ul id="nav">
                 <li><a style="letter-spacing: 2px;" href="#">NGUYỄN LÊ ANH HUY</a></li>
@@ -108,7 +112,7 @@
                                 <h3 class="place-heading" style="font-size:15px;">B4</h3>
                                 <p class="place-time">20 tháng 4 năm 2021</p>
                                 <p class="place-dsc">Đời sống sinh hoạt hằng ngày</p>
-                                <button  class="btn s-col-full "> Tại Nhà tạm giữ Công an Q. Ô Môn</button>
+                                <button  class="btn s-col-full " > Tại Nhà tạm giữ Công an Q. Ô Môn</button>
                             </div>
                         </div>
                         <div class="member-item col-one-third col">
@@ -238,6 +242,7 @@
     </script>
 
     <script>
+        
         var header = document.getElementById('header');
         var mobileMenu = document.getElementById('mobile-menu');
         var headerHeight = header.clientHeight;
@@ -269,8 +274,22 @@
                 
             }
         }
+        var modalById = document.getElementById("modal");
+        modalById.style.display="block";
+        function playit(){
+            var backgroundMusic = document.getElementById("bg-music");
+            
+            modalById.style.display='none';
+
+           
+            backgroundMusic.play();
+        }
         
-       
+
+    //    document.querySelector("audio").addEventListener("loadeddata", function(event){
+    //             playit();
+    //    });
+    
     </script>
 
     
